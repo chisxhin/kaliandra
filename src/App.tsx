@@ -1,3 +1,12 @@
+import logo from './assets/logo.png'
+import cover from './assets/cover.png'
+import equipment from './assets/equipment.png'
+import safety from './assets/safety.png'
+import materials from './assets/materials.png'
+import maintenance from './assets/maintenance.png'
+import resources from './assets/resources.png'
+import teamwork from './assets/teamwork.png'
+
 function App() {
   return (
     <div className="min-h-screen bg-white">
@@ -37,7 +46,7 @@ function App() {
           <div className="flex items-center justify-between h-20">
             {/* Brand Identity - Logo Placeholder */}
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-700 to-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">K</div>
+              <img src={logo} alt="KALIANDRA Logo" className="h-10 w-auto" />
               <span className="font-bold text-xl text-gray-900">KALIANDRA</span>
             </div>
             
@@ -98,12 +107,13 @@ function App() {
         {/* Bottom Section - Media Showcase & Metrics */}
         <div className="mt-16 bg-gray-900 rounded-2xl overflow-hidden">
           <div className="grid md:grid-cols-2">
-            {/* Featured Image Placeholder */}
-            <div className="h-64 md:h-80 bg-gradient-to-r from-green-700 to-orange-500 flex items-center justify-center">
-              <div className="text-center text-white">
-                <div className="text-5xl mb-2">🏗️</div>
-                <p className="text-sm">[Image Placeholder - Construction Team]</p>
-              </div>
+            {/* Featured Image */}
+            <div className="h-64 md:h-80 bg-gradient-to-r from-green-700 to-orange-500 flex items-center justify-center overflow-hidden">
+              <img 
+                src={cover} 
+                alt="Cover image showcasing construction excellence"
+                className="w-full h-full object-cover"
+              />
             </div>
             {/* Metrics placeholder */}
             <div className="p-8 flex items-center justify-center">
@@ -363,7 +373,7 @@ function App() {
             {/* Column 1 - Brand Profile & Socials */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold">K</div>
+                <img src={logo} alt="KALIANDRA Logo" className="h-8 w-auto" />
                 <span className="font-bold text-white text-xl">KALIANDRA</span>
               </div>
               <p className="text-gray-400 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
