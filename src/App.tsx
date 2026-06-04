@@ -75,14 +75,14 @@ function App() {
             {/* Sub-headline with orange line */}
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-0.5 bg-orange-500"></div>
-              <span className="text-orange-600 font-medium tracking-wide">Award-Winning Construction Excellence</span>
+              <span className="text-orange-600 font-medium tracking-wide">Strengthening Your Projects with Integrity</span>
             </div>
             
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-green-800">Where Innovation Drives</span>
+              <span className="text-green-800">Building on Integrity,</span>
               <br />
-              <span className="text-orange-500">Structural Perfection</span>
+              <span className="text-orange-500">Empowering Indonesian Enterprises</span>
             </h1>
             
             {/* Service Badges */}
@@ -97,32 +97,48 @@ function App() {
           
           {/* Right side - Body Copy with orange accent line */}
           <div className="relative pl-6">
-            <div className="absolute left-0 top-0 w-1 h-24 bg-orange-500"></div>
-            <p className="text-gray-600 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <div className="absolute left-0 top-3 w-1 h-56 bg-orange-500"></div>
+            <p className="text-gray-600 leading-relaxed text-justify">
+              A premier supplier company dedicated to providing high-
+              quality industrial goods, materials, and solutions to 
+              businesses across Indonesia. Founded on the principles of 
+              reliability, integrity, and customer-centric service, 
+              we are committed to supporting the operational efficiency and 
+              success of our clients.
             </p>
+            <p className="text-gray-600 leading-relaxed mt-4 text-justify">
+              At PT KKSA, we position ourselves as a strategic partner, meticulously 
+              sourcing and delivering products that meet the highest standards of 
+              quality and performance. Our goal is to build long-lasting 
+              relationships by consistently exceeding expectations and ensuring 
+              our clients have the resources they need to thrive.
+            </p> 
           </div>
         </div>
         
-        {/* Bottom Section - Media Showcase & Metrics */}
-        <div className="mt-16 bg-gray-900 rounded-2xl overflow-hidden">
-          <div className="grid md:grid-cols-2">
-            {/* Featured Image */}
-            <div className="h-64 md:h-80 bg-gradient-to-r from-green-700 to-orange-500 flex items-center justify-center overflow-hidden">
-              <img 
-                src={cover} 
-                alt="Cover image showcasing construction excellence"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Metrics placeholder */}
-            <div className="p-8 flex items-center justify-center">
-              <div className="text-center text-white">
-                <p className="text-orange-400 text-sm">PROJECT METRICS PLACEHOLDER</p>
-              </div>
+      {/* Bottom Section - Media Showcase & Metrics */}
+      <div className="mt-16">
+        <div className="grid md:grid-cols-[70%_30%] gap-6">
+          {/* Featured Image Box - 70% */}
+          <div className="h-64 md:h-80 bg-gradient-to-r from-green-700 to-orange-500 rounded-2xl overflow-hidden">
+            <img 
+              src={cover} 
+              alt="Cover image showcasing construction excellence" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
+          {/* Metrics Box - 30% */}
+          <div className="bg-gray-900 rounded-2xl p-8 flex items-center justify-center">
+            <div className="text-center text-white">
+              <div className="text-3xl font-bold text-orange-400">150+</div>
+              <p className="text-sm">Projects Completed</p>
+              <div className="text-3xl font-bold text-orange-400 mt-4">98%</div>
+              <p className="text-sm">Client Satisfaction</p>
             </div>
           </div>
         </div>
+      </div>
       </section>
 
       {/* ============================================ */}
@@ -142,13 +158,14 @@ function App() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Large Hero Image Placeholder */}
-            <div className="bg-gradient-to-br from-gray-300 to-gray-400 rounded-2xl h-80 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-6xl mb-3">🎬</div>
-                <p className="text-gray-600">[Hero Image Placeholder]</p>
-              </div>
-            </div>
+          {/* Large Hero Image */}
+          <div className="rounded-2xl overflow-hidden h-full">
+            <img 
+              src='./assets/vm_cover.jpg'
+              alt="Vision and mission"
+              className="w-full h-full object-cover"
+            />
+          </div>
             
             <div className="space-y-6">
               {/* Vision Card (Navy) */}
@@ -359,7 +376,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 border-b border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <h2 className="text-2xl md:text-3xl font-bold text-white">
-              Let's <span className="text-orange-500">Connect</span> there
+              Let’s <span className="text-orange-500">Connect</span> there
             </h2>
             <button className="px-8 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition">
               Contact Us
