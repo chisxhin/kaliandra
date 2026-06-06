@@ -27,6 +27,13 @@ function App() {
     }
   }, []);
 
+  // Navigate to products page with category filter
+  const navigateToProductsWithCategory = (category: string) => {
+    // Encode the category name for URL
+    const encodedCategory = encodeURIComponent(category)
+    window.location.href = `/products?category=${encodedCategory}`
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* ============================================ */}
@@ -39,23 +46,23 @@ function App() {
           <div className="flex items-center justify-between h-20">
             {/* Brand Identity */}
             <div className="flex items-center gap-2">
-              <img src={logo} alt="KALIANDRA Logo" className="h-10 w-auto" />
+              <img src={logo} alt="KALIANDRA Logo" className="h-10 w-auto py-2" />
               <span className="font-bold text-xl text-white">KALIANDRA</span>
             </div>
             
-            {/* Desktop Menu Links */}
-            <div className="hidden md:flex gap-8">
-              <a href="#about" className="text-white hover:text-orange-500 transition font-medium">About Us</a>
-              <a href="#vision" className="text-white hover:text-orange-500 transition font-medium">Vision & Mission</a>
-              <a href="#products" className="text-white hover:text-orange-500 transition font-medium">Products & Services</a>
-              <a href="#whychoose" className="text-white hover:text-orange-500 transition font-medium">Why Choose Us</a>
-              <a href="#contact" className="text-white hover:text-orange-500 transition font-medium">Contact Information</a>
+            {/* Desktop Menu Links - only on large screens */}
+            <div className="hidden min-[900px]:flex gap-6">
+              <a href="#about" className="text-white hover:text-orange-500 transition font-medium whitespace-nowrap">About Us</a>
+              <a href="#vision" className="text-white hover:text-orange-500 transition font-medium whitespace-nowrap">Vision & Mission</a>
+              <a href="#products" className="text-white hover:text-orange-500 transition font-medium whitespace-nowrap">Products & Services</a>
+              <a href="#whychoose" className="text-white hover:text-orange-500 transition font-medium whitespace-nowrap">Why Choose Us</a>
+              <a href="#contact" className="text-white hover:text-orange-500 transition font-medium whitespace-nowrap">Contact Information</a>
             </div>
             
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-white text-2xl focus:outline-none"
+              className="max-[899px]:block hidden text-white text-2xl focus:outline-none"
             >
               {isMenuOpen ? '✕' : '☰'}
             </button>
@@ -63,7 +70,7 @@ function App() {
           
           {/* Mobile Menu Dropdown */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-700">
+            <div className="max-[899px]:block hidden py-4 border-t border-gray-700">
               <div className="flex flex-col gap-3 pb-4">
                 <a 
                   href="#about" 
@@ -283,15 +290,18 @@ function App() {
           {/* Scrollable Container */}
           <div id="scrollContainer" className="overflow-x-auto scroll-smooth hide-scrollbar py-8">
             <div className="flex gap-6 w-max">
-              {/* Card 1 */}
-              <div className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-b-4 hover:border-orange-500 hover:border-r-4 w-[280px] md:w-[320px] flex-shrink-0 flex flex-col">
+              
+              {/* Card 1 - Machinery, Parts & Equipment */}
+              <div 
+                onClick={() => navigateToProductsWithCategory('Machinery, Parts & Equipment')}
+                className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-b-4 hover:border-orange-500 hover:border-r-4 w-[280px] md:w-[320px] flex-shrink-0 flex flex-col cursor-pointer"
+              >
                 <div className="h-40 bg-gradient-to-r from-green-700 to-green-500 relative">
                   <img 
                     src={equipment} 
                     alt="Machinery, Parts & Equipment" 
                     className="w-full h-full object-cover"
                   />
-                  {/* Icon stays on top of the image */}
                   <div className="absolute -bottom-6 left-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg z-20">
                     🏠
                   </div>
@@ -299,58 +309,65 @@ function App() {
                 <div className="p-5 pt-8 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-green-800 mb-2">Machinery, Parts & Equipment</h3>
                   <p className="text-gray-600 text-sm mb-4 flex-grow">Supplying durable machinery and genuine spare parts to ensure operational continuity.</p>
-                  <a href="#" className="text-green-700 font-medium group-hover:text-orange-500 transition flex items-center gap-1">
+                  <span className="text-green-700 font-medium group-hover:text-orange-500 transition flex items-center gap-1">
                     Learn more <span>→</span>
-                  </a>
+                  </span>
                 </div>
               </div>
               
-              {/* Card 2 */}
-              <div className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-b-4 hover:border-orange-500 hover:border-r-4 w-[280px] md:w-[320px] flex-shrink-0">
+              {/* Card 2 - Safety & Personal Protective Equipment */}
+              <div 
+                onClick={() => navigateToProductsWithCategory('Safety & Personal Protective Equipment')}
+                className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-b-4 hover:border-orange-500 hover:border-r-4 w-[280px] md:w-[320px] flex-shrink-0 flex flex-col cursor-pointer"
+              >
                 <div className="h-40 bg-gradient-to-r from-green-700 to-green-500 relative">
                   <img 
                     src={safety} 
                     alt="Safety & Personal Protective Equipment" 
                     className="w-full h-full object-cover"
                   />
-                  {/* Icon stays on top of the image */}
                   <div className="absolute -bottom-6 left-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg z-20">
-                    🏠
+                    🛡️
                   </div>
                 </div>
                 <div className="p-5 pt-8 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-green-800 mb-2">Safety & Personal Protective Equipment</h3>
                   <p className="text-gray-600 text-sm mb-4 flex-grow">Providing certified safety equipment to protect your most valuable asset—your people.</p>
-                  <a href="#" className="text-green-700 font-medium group-hover:text-orange-500 transition flex items-center gap-1">
+                  <span className="text-green-700 font-medium group-hover:text-orange-500 transition flex items-center gap-1">
                     Learn more <span>→</span>
-                  </a>
+                  </span>
                 </div>
               </div>
               
-              {/* Card 3 */}
-              <div className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-b-4 hover:border-orange-500 hover:border-r-4 w-[280px] md:w-[320px] flex-shrink-0">
+              {/* Card 3 - Raw Materials & Consumables */}
+              <div 
+                onClick={() => navigateToProductsWithCategory('Raw Materials & Consumables')}
+                className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-b-4 hover:border-orange-500 hover:border-r-4 w-[280px] md:w-[320px] flex-shrink-0 flex flex-col cursor-pointer"
+              >
                 <div className="h-40 bg-gradient-to-r from-green-700 to-green-500 relative">
                   <img 
                     src={materials} 
                     alt="Raw Materials & Consumables" 
                     className="w-full h-full object-cover"
                   />
-                  {/* Icon stays on top of the image */}
                   <div className="absolute -bottom-6 left-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg z-20">
-                    🏠
+                    📦
                   </div>
                 </div>
                 <div className="p-5 pt-8 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-green-800 mb-2">Raw Materials & Consumables</h3>
                   <p className="text-gray-600 text-sm mb-4 flex-grow">Sourcing essential materials required for production processes.</p>
-                  <a href="#" className="text-green-700 font-medium group-hover:text-orange-500 transition flex items-center gap-1">
+                  <span className="text-green-700 font-medium group-hover:text-orange-500 transition flex items-center gap-1">
                     Learn more <span>→</span>
-                  </a>
+                  </span>
                 </div>
               </div>
               
-              {/* Card 4 - New */}
-              <div className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-b-4 hover:border-orange-500 hover:border-r-4 w-[280px] md:w-[320px] flex-shrink-0">
+              {/* Card 4 - Maintenance, Repair & Operations */}
+              <div 
+                onClick={() => navigateToProductsWithCategory('Maintenance, Repair & Operations')}
+                className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-b-4 hover:border-orange-500 hover:border-r-4 w-[280px] md:w-[320px] flex-shrink-0 flex flex-col cursor-pointer"
+              >
                 <div className="h-40 bg-gradient-to-r from-green-700 to-green-500 relative">
                   <img 
                     src={maintenance} 
@@ -358,20 +375,23 @@ function App() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute -bottom-6 left-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg z-20">
-                    🏭
+                    🔧
                   </div>
                 </div>
                 <div className="p-5 pt-8 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-green-800 mb-2">Maintenance, Repair & Operations</h3>
                   <p className="text-gray-600 text-sm mb-4 flex-grow">Offering a wide array of tools and supplies to keep your facilities running smoothly.</p>
-                  <a href="#" className="text-green-700 font-medium group-hover:text-orange-500 transition flex items-center gap-1">
+                  <span className="text-green-700 font-medium group-hover:text-orange-500 transition flex items-center gap-1">
                     Learn more <span>→</span>
-                  </a>
+                  </span>
                 </div>
               </div>
               
-              {/* Card 5 - New */}
-              <div className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-b-4 hover:border-orange-500 hover:border-r-4 w-[280px] md:w-[320px] flex-shrink-0">
+              {/* Card 5 - Customized Sourcing */}
+              <div 
+                onClick={() => navigateToProductsWithCategory('Customized Sourcing')}
+                className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:border-b-4 hover:border-orange-500 hover:border-r-4 w-[280px] md:w-[320px] flex-shrink-0 flex flex-col cursor-pointer"
+              >
                 <div className="h-40 bg-gradient-to-r from-green-700 to-green-500 relative">
                   <img 
                     src={resources} 
@@ -379,24 +399,25 @@ function App() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute -bottom-6 left-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg z-20">
-                    🔬
+                    ⚙️
                   </div>
                 </div>
                 <div className="p-5 pt-8 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-green-800 mb-2">Customized Sourcing</h3>
                   <p className="text-gray-600 text-sm mb-4 flex-grow">Leveraging our extensive network to source specific or hard-to-find items based on client requirements.</p>
-                  <a href="#" className="text-green-700 font-medium group-hover:text-orange-500 transition flex items-center gap-1">
+                  <span className="text-green-700 font-medium group-hover:text-orange-500 transition flex items-center gap-1">
                     Learn more <span>→</span>
-                  </a>
+                  </span>
                 </div>
               </div>
+              
             </div>
           </div>
           
-          {/* Right Arrow Button Only */}
+          {/* Right Arrow Button */}
           <button 
             id="scrollRightBtn"
-            className="absolute right-0 top-44/100 -translate-y-1/2 -mr-4 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-orange-500 hover:text-white transition shadow-md"
+            className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-orange-500 hover:text-white transition shadow-md"
           >
             →
           </button>
@@ -404,9 +425,12 @@ function App() {
         
         {/* Section Call-to-Action */}
         <div className="flex justify-center gap-3 mt-12">
-          <button className="px-8 py-3 bg-gray-200 text-gray-800 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition">
+          <a 
+            href="/products"
+            className="px-8 py-3 bg-gray-200 text-gray-800 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition"
+          >
             View All Services
-          </button>
+          </a>
         </div>
       </div>
     </section>
