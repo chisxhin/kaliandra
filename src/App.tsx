@@ -488,9 +488,14 @@ function App() {
             <h2 className="text-2xl md:text-3xl font-bold text-white">
               Let’s <span className="text-orange-500">Connect</span> here
             </h2>
-            <button className="px-8 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition">
+            <a 
+              href="mailto:info.kksa@gmail.com?subject=Inquiry%20from%20KKSA%20Website"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition inline-block text-center"
+            >
               Contact Us
-            </button>
+            </a>
           </div>
         </div>
         
