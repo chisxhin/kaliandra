@@ -48,7 +48,7 @@ function App() {
               <a href="#about" className="text-white hover:text-orange-500 transition font-medium">About Us</a>
               <a href="#vision" className="text-white hover:text-orange-500 transition font-medium">Vision & Mission</a>
               <a href="#products" className="text-white hover:text-orange-500 transition font-medium">Products & Services</a>
-              <a href="#whychoose" className="text-white hover:text-orange-500 transition font-medium">Why Choose PT KKSA</a>
+              <a href="#whychoose" className="text-white hover:text-orange-500 transition font-medium">Why Choose Us</a>
               <a href="#contact" className="text-white hover:text-orange-500 transition font-medium">Contact Information</a>
             </div>
             
@@ -91,7 +91,7 @@ function App() {
                   onClick={() => setIsMenuOpen(false)}
                   className="text-white hover:text-orange-500 transition font-medium py-2"
                 >
-                  Why Choose PT KKSA
+                  Why Choose Us
                 </a>
                 <a 
                   href="#contact" 
@@ -109,76 +109,78 @@ function App() {
       {/* ============================================ */}
       {/* HERO SECTION */}
       {/* ============================================ */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left side - Main Text */}
-          <div>
-            {/* Sub-headline with orange line */}
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-0.5 bg-orange-500"></div>
-              <span className="text-orange-600 font-medium tracking-wide">Strengthening Your Projects with Integrity</span>
+      <section id="about" className="py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left side - Main Text */}
+            <div>
+              {/* Sub-headline with orange line */}
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-0.5 bg-orange-500"></div>
+                <span className="text-orange-600 font-medium tracking-wide">Strengthening Your Projects with Integrity</span>
+              </div>
+              
+              {/* Main Headline */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <span className="text-green-800">Building on Integrity,</span>
+                <br />
+                <span className="text-orange-500">Empowering Indonesian Enterprises</span>
+              </h1>
+              
+              {/* Service Badges */}
+              <div className="flex flex-wrap gap-3 mt-8">
+                <span className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Raw Materials & Consumables</span>
+                <span className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Machinery, Parts & Equipment</span>
+                <span className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">PPE</span>
+                <span className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">MRO</span>
+                <span className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Customized Sourcing</span>
+              </div>
             </div>
             
-            {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-green-800">Building on Integrity,</span>
-              <br />
-              <span className="text-orange-500">Empowering Indonesian Enterprises</span>
-            </h1>
-            
-            {/* Service Badges */}
-            <div className="flex flex-wrap gap-3 mt-8">
-              <span className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Raw Materials & Consumables</span>
-              <span className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Machinery, Parts & Equipment</span>
-              <span className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">PPE</span>
-              <span className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">MRO</span>
-              <span className="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Customized Sourcing</span>
+            {/* Right side - Body Copy with orange accent line */}
+            <div className="relative pl-6">
+              <div className="absolute left-0 top-3 w-1 h-56 bg-orange-500"></div>
+              <p className="text-gray-600 leading-relaxed text-justify">
+                A premier supplier company dedicated to providing high-
+                quality industrial goods, materials, and solutions to 
+                businesses across Indonesia. Founded on the principles of 
+                reliability, integrity, and customer-centric service, 
+                we are committed to supporting the operational efficiency and 
+                success of our clients.
+              </p>
+              <p className="text-gray-600 leading-relaxed mt-4 text-justify">
+                At PT KKSA, we position ourselves as a strategic partner, meticulously 
+                sourcing and delivering products that meet the highest standards of 
+                quality and performance. Our goal is to build long-lasting 
+                relationships by consistently exceeding expectations and ensuring 
+                our clients have the resources they need to thrive.
+              </p> 
             </div>
           </div>
           
-          {/* Right side - Body Copy with orange accent line */}
-          <div className="relative pl-6">
-            <div className="absolute left-0 top-3 w-1 h-56 bg-orange-500"></div>
-            <p className="text-gray-600 leading-relaxed text-justify">
-              A premier supplier company dedicated to providing high-
-              quality industrial goods, materials, and solutions to 
-              businesses across Indonesia. Founded on the principles of 
-              reliability, integrity, and customer-centric service, 
-              we are committed to supporting the operational efficiency and 
-              success of our clients.
-            </p>
-            <p className="text-gray-600 leading-relaxed mt-4 text-justify">
-              At PT KKSA, we position ourselves as a strategic partner, meticulously 
-              sourcing and delivering products that meet the highest standards of 
-              quality and performance. Our goal is to build long-lasting 
-              relationships by consistently exceeding expectations and ensuring 
-              our clients have the resources they need to thrive.
-            </p> 
-          </div>
-        </div>
-        
-      {/* Bottom Section - Media Showcase & Metrics */}
-      <div className="mt-16">
-        <div className="grid md:grid-cols-[70%_30%] gap-6">
-          {/* Featured Image Box - 70% */}
-          <div className="h-64 md:h-80 bg-gradient-to-r from-green-700 to-orange-500 rounded-2xl overflow-hidden">
-            <img 
-              src={cover} 
-              alt="Cover image showcasing construction excellence" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-          
-          {/* Metrics Box - 30% */}
-          <div className="bg-gray-900 rounded-2xl p-8 flex items-center justify-center">
-            <div className="text-center text-white">
-              <div className="text-3xl font-bold text-orange-400">150+</div>
-              <p className="text-sm">Projects Completed</p>
-              <div className="text-3xl font-bold text-orange-400 mt-4">98%</div>
-              <p className="text-sm">Client Satisfaction</p>
+          {/* Bottom Section - Media Showcase & Metrics */}
+          <div className="mt-16">
+            <div className="grid md:grid-cols-[67%_30%] gap-6">
+              {/* Featured Image Box - 70% */}
+              <div className="h-64 md:h-80 bg-gradient-to-r from-green-700 to-orange-500 rounded-xl overflow-hidden">
+                <img 
+                  src={cover} 
+                  alt="Cover image showcasing construction excellence" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Metrics Box - 30% */}
+              <div className="bg-gray-900 rounded-2xl p-8 flex items-center justify-center">
+                <div className="text-center text-white">
+                  <div className="text-3xl font-bold text-orange-400">150+</div>
+                  <p className="text-sm">Products Supplied</p>
+                  <div className="text-3xl font-bold text-orange-400 mt-4">100%</div>
+                  <p className="text-sm">Client Satisfaction</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
       </div>
       </section>
 
@@ -501,7 +503,7 @@ function App() {
                 <img src={logo} alt="KALIANDRA Logo" className="h-8 w-auto" />
                 <span className="font-bold text-white text-xl">KALIANDRA</span>
               </div>
-              <p className="text-gray-400 text-sm mb-4">A premier industrial supplier in Indonesia, delivering high-quality goods, materials, and solutions to boost business operational efficiency. Providing meticulously sourced products, meeting the highest standards and upholding integrity and customer satisfaction.</p>
+              <p className="text-gray-400 text-sm mb-4">A premier Indonesian industrial supplier of high-quality goods and solutions, committed to integrity, customer satisfaction, and operational efficiency.</p>
             </div>
             
             {/* Column 2 - Navigation Links */}
@@ -546,7 +548,7 @@ function App() {
         {/* Bottom Copyright Bar */}
         <div className="bg-orange-500 py-3">
           <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center text-white text-sm">
-            <p>Copyright © 2025 KKSA. All Rights Reserved.</p>
+            <p>Copyright © 2026 KKSA. All Rights Reserved.</p>
           </div>
         </div>
       </footer>
